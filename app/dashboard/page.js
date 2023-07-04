@@ -1,9 +1,14 @@
+"use client"
+import { signOut } from "next-auth/react"
+import NavbarIn from "../components/NavbarIn"
+
 // export const metadata = {
 //     title: 'Check',
 //   }
 
 export default function Dashboard(){
     return <>
-        <h2>This is Dashboard!</h2>
+        <NavbarIn />
+        <button onClick={signOut}>Sign Out</button>
     </>
 }

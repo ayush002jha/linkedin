@@ -1,5 +1,6 @@
 import Image from "next/image";
 import NavLinks from "./NavLinks";
+// Material Ui Icons
 import NewspaperIcon from '@mui/icons-material/Newspaper';
 import PeopleIcon from '@mui/icons-material/People';
 import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';

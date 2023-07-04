@@ -10,8 +10,9 @@ export async function middleware(req) {
             secureCookie: process.env.NODE_ENV === "production"
         })
         // Check Whether the user is authenticated then continue!
+        // if(session) return NextResponse.redirect(new URL("/dashboard", req.url));
+        // Otherwise return
         if (!session) return NextResponse.redirect(new URL('/', req.url));
-        
     }
 }
 
