@@ -5,7 +5,8 @@ import PeopleIcon from '@mui/icons-material/People';
 import OndemandVideoIcon from '@mui/icons-material/OndemandVideo';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 
-function Navbar() {
+
+function Navbar({providers,signIn}) {
   return (
     <div>
       <header className="flex justify-around items-center py-4">
@@ -24,13 +25,16 @@ function Navbar() {
             <NavLinks Icon={OndemandVideoIcon} text="Learning" />
             <NavLinks Icon={BusinessCenterIcon} text="Jobs" />
           </div>
-          <div className="pl-4">
-          <button className="text-blue-700 font-semibold rounded-full border border-blue-700 px-5 py-2 transition-all hover:border-2">Sign in</button>
-          </div>
+          {Object.values(providers).map((provider) => (
+            <div key={provider.id} className="pl-4">
+              <button onClick={()=>signIn(provider.id,{callbackUrl:"/dashboard"})} className="text-blue-700 font-semibold rounded-full border border-blue-700 px-5 py-2 transition-all hover:border-2">Sign in</button>
+            </div>
+          ))}
+
         </div>
 
       </header>
-      
+
     </div>
   )
 }

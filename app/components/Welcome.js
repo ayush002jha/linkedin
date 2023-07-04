@@ -1,12 +1,10 @@
 import Image from "next/image"
 import homeImg from "../../public/home.png"
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
-// Next-Auth powerfull Functions such as signIn and signOut 
-import {getProviders,signIn} from "next-auth/react"
 
-async function Welcome() {
-    // This function provides the object that list the providers used such google, linkedin or apple etc...
-    const providers = await getProviders(); 
+
+async function Welcome({providers,signIn}) {
+
   return (
     <main className="flex flex-col justify-center xl:flex-row items-center max-w-screen-lg mx-auto ">
     {console.log(providers)}
